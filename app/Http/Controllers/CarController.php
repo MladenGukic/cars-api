@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use App\Http\Requests\CarRequest;
 
 class CarController extends Controller
 {
@@ -69,12 +70,13 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CarRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $car = Car::find($id);
         $car->update($request->all());
 
-        return $car;    }
+        return $car;
+    }
 
     /**
      * Remove the specified resource from storage.

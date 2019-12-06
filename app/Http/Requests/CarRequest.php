@@ -27,10 +27,10 @@ class CarRequest extends FormRequest
         'brand' => 'required',
         'model' => 'required',
         'year' => 'required',
-        'maxSpeed' => 'max:300|min:20',
-        'isAutomatic' => 'required',
+        'maxSpeed' => 'numeric|max:300|min:20',
+        'isAutomatic' => 'boolean',
         'engine' => 'required',
-        'numberOfDoors' => 'required|max:5|min:2'
+        'numberOfDoors' => 'required|numeric|max:5|min:2'
         ];
     }
 }
